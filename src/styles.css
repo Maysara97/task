@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+.submitBtn{
+    margin-top: 5%;
+}
+
+.theBtn{
+    padding: 2%;
+    width: 50%;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: cursive;
+    cursor: pointer;
+}

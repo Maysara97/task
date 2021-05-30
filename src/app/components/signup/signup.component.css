@@ -1,0 +1,87 @@
+.container{
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+}
+
+.companyTitle{
+    font-family: Tahoma;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 12%;
+    color: linear-gradient( #000000, #332528, #644449, #9a676b, #d38c8c);
+    width: 50%;
+}
+
+.welcome{
+    font-size: 22px;
+}
+
+.roundPixel{
+    font-size: 30px;
+    color: darkcyan;
+}
+.theForm{
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid darkcyan;
+    border-radius: 8px;
+    padding: 2% 1%;
+    
+}
+
+.header{
+    font-size: 25px;
+    text-align: left;
+}
+
+.form-group{
+    margin-top: 1%;
+}
+
+label{
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    margin-left: 24%;
+    margin-bottom: 4px;
+}
+
+input{
+    border-radius: 8px;
+    height: 26px;
+    width: 50%;
+}
+
+select{
+    border-radius: 8px;
+    height: 35px;
+    width: 50%;
+}
+
+
+@media (max-width:769px) {
+    .container{
+        display: inline-block !important;
+    }
+
+    .companyTitle{
+        width: 100% !important;
+    }
+
+    .theForm{
+        width: 100% !important;
+        padding: 2% 0% !important;
+    }
+}
+
+.text-danger{
+    color: #e10909;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 25%;
+}
+

@@ -1,0 +1,23 @@
+.container{
+    font-family: Tahoma;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 12%;
+    color: linear-gradient( #000000, #332528, #644449, #9a676b, #d38c8c);
+}
+
+.welcome{
+    font-size: 22px;
+}
+
+.roundPixel{
+    font-size: 30px;
+    color: darkcyan;
+}
+
+.userName{
+    font-style: italic;
+    font-family: cursive !important;
+}
+
+

@@ -1,1 +1,78 @@
-<p>signup works!</p>
+<div class="container">
+    <div class="companyTitle">
+       <span class="welcome">Welcome To</span><br>
+       <span class="roundPixel">Round Pixel</span>
+    </div>
+
+
+    <div class="theForm">
+        <div class="header">Signup</div>
+        <hr>
+        <form [formGroup]="signUpForm">
+            <div class="form-group">
+                <label>Username</label>
+                <input formControlName="userName" type="text" placeholder="enter your name">
+                <div class="text-danger" *ngIf="signUpForm.controls.userName.touched && signUpForm.controls.userName.errors != null">
+                    <div *ngIf="signUpForm.controls.userName.errors!.required">Username Is Required</div>
+                    <div *ngIf="signUpForm.controls.userName.errors!.pattern">
+                        <span>Only English Charachters Allowed,</span><br>
+                        <span>Dont Use Any Special Charachters.</span>
+                    </div>
+              </div> 
+            </div>
+
+            <div class="form-group">
+                <label>Nationality</label>
+                <select formControlName="nationality">
+                    <option value="default" disabled>Choose Your Nationality. </option>
+                    <option *ngFor="let country of allCountries" [value]="country.pseudoCountryCode">
+                        {{country.countryName}} ({{country.pseudoCountryCode}})
+                    </option>
+                </select>
+                <div class="text-danger" *ngIf="signUpForm.controls.nationality.touched && signUpForm.controls.nationality.errors != null">
+                    <div *ngIf="signUpForm.controls.nationality.errors!.required">Nationality Is Required</div>
+              </div> 
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" formControlName="email" placeholder="enter you email address">
+                <div class="text-danger" *ngIf="signUpForm.controls.email.touched && signUpForm.controls.email.errors != null">
+                    <div *ngIf="signUpForm.controls.email.errors!.required">Username Is Required</div>
+              </div> 
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password">
+                <div class="text-danger" *ngIf="signUpForm.controls.password.touched && signUpForm.controls.password.errors != null">
+                    <div *ngIf="signUpForm.controls.password.errors!.required">password Is Required</div>
+                    <div *ngIf="signUpForm.controls.password.errors!.minlength">password Must Has At Least "8" Charachters & Numbers</div>
+                    <div *ngIf="signUpForm.controls.password.errors!.pattern">
+                        <span>Only English Charachters Allowed,</span><br>
+                    </div>
+              </div> 
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmPassword">
+                <div class="text-danger"
+              *ngIf="signUpForm.controls.password.value != signUpForm.controls.confirmPassword.value">Passwords is dismatch</div>
+                <div class="text-danger" *ngIf="signUpForm.controls.confirmPassword.touched && signUpForm.controls.confirmPassword.errors != null">
+                    <div *ngIf="signUpForm.controls.confirmPassword.errors!.required">Password Confirmation Is Required</div>
+              </div> 
+            </div>
+
+            <div class="submitBtn">
+                <button (click)="goToWelcome()" type="submit" class="theBtn">Submit (go to welcome)</button>
+            </div>
+
+            <div *ngIf="statusError && this.signUpForm.status == 'INVALID'"  style="margin-top: 2%;"
+            class="text-danger">Please Fill All Data.</div>
+
+            <div *ngIf="serverError" style="margin-top: 2%;"
+            class="text-danger">Loading Failed ! (Server Error, please check your connection).</div>
+        </form>
+    </div>
+</div>
