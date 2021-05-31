@@ -1,6 +1,6 @@
 export interface countries {
     countryName       : string
-    phoneCode         : any
-    pseudoCountryCode : any
+    phoneCode         : string
+    pseudoCountryCode : string
     regionName        : string
   }

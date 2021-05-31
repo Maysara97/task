@@ -11,7 +11,7 @@
         <form [formGroup]="signUpForm">
             <div class="form-group">
                 <label>Username</label>
-                <input formControlName="userName" type="text" placeholder="enter your name">
+                <input (keypress)="preventArabic($event)" formControlName="userName" type="text" placeholder="enter your name">
                 <div class="text-danger" *ngIf="signUpForm.controls.userName.touched && signUpForm.controls.userName.errors != null">
                     <div *ngIf="signUpForm.controls.userName.errors!.required">Username Is Required</div>
                     <div *ngIf="signUpForm.controls.userName.errors!.pattern">
@@ -58,7 +58,7 @@
                 <label>Confirm Password</label>
                 <input type="password" formControlName="confirmPassword">
                 <div class="text-danger"
-              *ngIf="signUpForm.controls.password.value != signUpForm.controls.confirmPassword.value">Passwords is dismatch</div>
+              *ngIf="signUpForm.controls.confirmPassword.touched && signUpForm.controls.password.value != signUpForm.controls.confirmPassword.value">Passwords is dismatch</div>
                 <div class="text-danger" *ngIf="signUpForm.controls.confirmPassword.touched && signUpForm.controls.confirmPassword.errors != null">
                     <div *ngIf="signUpForm.controls.confirmPassword.errors!.required">Password Confirmation Is Required</div>
               </div> 

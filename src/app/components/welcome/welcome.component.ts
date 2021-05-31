@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  userName = localStorage.getItem('username') || ' '
+  userName:string = localStorage.getItem('username') || ' '
 
   constructor(private router :  Router) { }
 
